@@ -7,14 +7,16 @@ with open("story.txt","r") as myfile :
     #story = story.replace("MADLIB", "PERSON",1)
     #print (story.count("MADLIB"))
 
-choices.append(input(f"ENTER A {order[0]} :"))
+while len(choices) < 8 :
+    choices.append(input(f"ENTER A {order[len(choices)]} :"))
 
-print(choices[0])
+print(choices)
+choices = list(choices)
+print(choices)
 
 
+while story.count("MADLIB") > 0 :
+    count = abs(story.count("MADLIB")-8)
+    story = story.replace("MADLIB", f"{str(choices[count])}" ,1)
+print (story)
 
-
-#   while story.count("MADLIB") > 0 :
-#       story = story.replace("MADLIB", "PERSON",1)
-#       print (story.count("MADLIB"))
-#       print (story)
